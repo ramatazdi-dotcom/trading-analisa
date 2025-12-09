@@ -189,9 +189,14 @@ def position_from_entry_sl(balance, risk_pct, entry_price, sl_price, tp_price=No
 # KONFIGURASI HALAMAN
 # =========================
 st.set_page_config(
-    page_title="Trading Decision Helper (EMA + RSI)",
+    page_title="Trader Analyzer (EMA + RSI)",
     layout="wide"
 )
+
+from PIL import Image
+
+logo = Image.open("app_logo.png")
+st.sidebar.image(logo, width=160)
 
 # =========================
 # SIDEBAR
@@ -290,9 +295,9 @@ with st.sidebar:
 # =========================
 st.markdown(
     """
-    <h1 style="margin-bottom:0px;">📊 Trading Decision Helper <span style="font-size:60%;">(EMA + RSI)</span></h1>
-    <p style="color:#aaaaaa;">Alat bantu analisis teknikal sederhana untuk crypto, saham, dan forex.
-    <b>Bukan</b> rekomendasi finansial resmi.</p>
+    <h1 style="margin-bottom:0px;">Trader Analyzer <span style="font-size:60%;">(EMA + RSI)</span></h1>
+    <p style="color:#aaaaaa;">Alat bantu tambahan analisis teknikal sederhana untuk crypto, saham, dan forex.
+    <b>Bukan</b> rekomendasi resmi suatu instrumen tertentu.</p>
     """,
     unsafe_allow_html=True
 )
@@ -470,6 +475,7 @@ if mode.startswith("📡"):
     st.caption(
         "Disclaimer: Mode ini menggunakan data dari Yahoo Finance. "
         "Harga bisa sedikit berbeda dengan broker / exchange kamu."
+        "Keputusan sepenuhnya menjadi tanggung jawab kamu ya..."
     )
 
 # =====================================================
